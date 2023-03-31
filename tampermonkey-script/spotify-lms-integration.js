@@ -27,8 +27,8 @@ var lmsHost = "LMS-HOSTNAME-OR-IP";	// IP or hostname where LMS resides (e.g. 19
 var lmsPort = 9000;					// port for LMS web interface, default 9000
 // END USER DEFINED VARIABLES
 
-var sendToLMSIconSVG = '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24" viewBox="0 0 24 24"><style>.lmsIcon{fill:#C0C0C0;} .lmsIcon:hover{fill:#E7E7E7; cursor:pointer;}</style><path class="lmsIcon" d="M2 11v2c5 0 9 4 9 9h2c0-6.1-4.9-11-11-11m18-9H10c-1.1 0-2 .9-2 2v6.5c1 .5 1.9 1.2 2.7 1.9c.9-1.4 2.5-2.4 4.3-2.4c2.8 0 5 2.2 5 5s-2.2 5-5 5h-.2c.1.7.2 1.3.2 2h5c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2m-5 6c-1.1 0-2-.9-2-2s.9-2 2-2s2 .9 2 2s-.9 2-2 2m0 10c-.2 0-.5 0-.7-.1c-.5-1.5-1.2-2.8-2.1-4c.4-1.1 1.5-2 2.8-2c1.7 0 3 1.3 3 3S16.7 18 15 18M2 15v2c2.8 0 5 2.2 5 5h2c0-3.9-3.1-7-7-7m0 4v3h3c0-1.7-1.3-3-3-3"></path></svg>';
-var sendAllToLMSIconSVG = '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32" viewBox="0 0 24 24"><style>.lmsIcon{fill:#C0C0C0;} .lmsIcon:hover{fill:#E7E7E7; cursor:pointer;}</style><path class="lmsIcon" d="M2 11v2c5 0 9 4 9 9h2c0-6.1-4.9-11-11-11m18-9H10c-1.1 0-2 .9-2 2v6.5c1 .5 1.9 1.2 2.7 1.9c.9-1.4 2.5-2.4 4.3-2.4c2.8 0 5 2.2 5 5s-2.2 5-5 5h-.2c.1.7.2 1.3.2 2h5c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2m-5 6c-1.1 0-2-.9-2-2s.9-2 2-2s2 .9 2 2s-.9 2-2 2m0 10c-.2 0-.5 0-.7-.1c-.5-1.5-1.2-2.8-2.1-4c.4-1.1 1.5-2 2.8-2c1.7 0 3 1.3 3 3S16.7 18 15 18M2 15v2c2.8 0 5 2.2 5 5h2c0-3.9-3.1-7-7-7m0 4v3h3c0-1.7-1.3-3-3-3"></path></svg>';
+var sendToLMSIconSVG = '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="lmsIcon" width="16" height="16" aria-hidden="true" viewBox="0 0 24 24"><style>.lmsIcon{fill:#C0C0C0;} .lmsIcon:hover{fill:#E7E7E7;}</style><path d="M2 11v2c5 0 9 4 9 9h2c0-6.1-4.9-11-11-11m18-9H10c-1.1 0-2 .9-2 2v6.5c1 .5 1.9 1.2 2.7 1.9c.9-1.4 2.5-2.4 4.3-2.4c2.8 0 5 2.2 5 5s-2.2 5-5 5h-.2c.1.7.2 1.3.2 2h5c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2m-5 6c-1.1 0-2-.9-2-2s.9-2 2-2s2 .9 2 2s-.9 2-2 2m0 10c-.2 0-.5 0-.7-.1c-.5-1.5-1.2-2.8-2.1-4c.4-1.1 1.5-2 2.8-2c1.7 0 3 1.3 3 3S16.7 18 15 18M2 15v2c2.8 0 5 2.2 5 5h2c0-3.9-3.1-7-7-7m0 4v3h3c0-1.7-1.3-3-3-3"></path></svg>';
+var sendAllToLMSIconSVG = '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="lmsIcon" width="32" height="32" viewBox="0 0 24 24"><style>.lmsIcon{fill:#C0C0C0;} .lmsIcon:hover{fill:#E7E7E7;}</style><path d="M2 11v2c5 0 9 4 9 9h2c0-6.1-4.9-11-11-11m18-9H10c-1.1 0-2 .9-2 2v6.5c1 .5 1.9 1.2 2.7 1.9c.9-1.4 2.5-2.4 4.3-2.4c2.8 0 5 2.2 5 5s-2.2 5-5 5h-.2c.1.7.2 1.3.2 2h5c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2m-5 6c-1.1 0-2-.9-2-2s.9-2 2-2s2 .9 2 2s-.9 2-2 2m0 10c-.2 0-.5 0-.7-.1c-.5-1.5-1.2-2.8-2.1-4c.4-1.1 1.5-2 2.8-2c1.7 0 3 1.3 3 3S16.7 18 15 18M2 15v2c2.8 0 5 2.2 5 5h2c0-3.9-3.1-7-7-7m0 4v3h3c0-1.7-1.3-3-3-3"></path></svg>';
 var lmsURI = "http://" + lmsHost + ":" + lmsPort + "/jsonrpc.js";
 
 function toastNotification(message, status) {
@@ -78,7 +78,7 @@ function sendToLMS(URI, title, notify) {
 }
 
 function sendAllToLMS() {
-	var trackLinks = document.querySelectorAll("a[href^='/track']");
+	var trackLinks = document.querySelectorAll("div[role='presentation']>div[role='row']>div[role='presentation']>div[role='gridcell']>div>a[href^='/track']");
 	if (trackLinks) {
 		for (var i = 0, l = trackLinks.length; i < l; i++) {
 			var trackLink = trackLinks[i];
@@ -98,23 +98,25 @@ function injectCastToLMSButton() {
 	if (!(window.location.href.startsWith("https://open.spotify.com/playlist") || window.location.href.startsWith("https://open.spotify.com/album"))) {
 		return;
 	}
-	var trackLinks = document.querySelectorAll("a[href^='/track']");
+	var trackLinks = document.querySelectorAll("div[role='presentation']>div[role='row']>div[role='presentation']>div[role='gridcell']>div>a[href^='/track']");
 	if (trackLinks) {
 		for (var i = 0, l = trackLinks.length; i < l; i++) {
 			var trackLink = trackLinks[i];
-			if (trackLink.parentElement.parentElement.lastChild.name != "sendToLMSIcon") {
+			var lastColumn = trackLink.parentElement.parentElement.parentElement.lastChild;
+			if (lastColumn.firstChild.name != "sendToLMSIcon") {
 				const trackUrl = trackLink.href;
 				const trackName = trackLink.textContent;
-				var sendToLMSIcon = document.createElement('div');
+				var sendToLMSIcon = document.createElement('button');
+				sendToLMSIcon.type = "button";
 				sendToLMSIcon.name = "sendToLMSIcon";
 				sendToLMSIcon.style.cursor = 'pointer';
-				sendToLMSIcon.style.display = 'grid';
 				sendToLMSIcon.innerHTML = sendToLMSIconSVG;
-				sendToLMSIcon.title = "Send track to LMS";
+				sendToLMSIcon.setAttribute("title", "Send track to LMS");
+				sendToLMSIcon.setAttribute("class", lastColumn.lastChild.getAttribute("class"));
 				sendToLMSIcon.onclick = function() {
 					sendToLMS(trackUrl, trackName, true);
 				};
-				trackLink.parentElement.parentElement.appendChild(sendToLMSIcon);
+				lastColumn.prepend(sendToLMSIcon);
 			}
 		}
 	}
@@ -127,11 +129,12 @@ function injectCastAllToLMSButton() {
 	}
 	var actionBar = document.querySelector("div[data-testid='action-bar-row']");
 	if(actionBar && actionBar.childElementCount > 0 && !document.querySelector("div[name='sendAllToLMSIcon']")) {
-		var sendAllToLMSIcon = document.createElement('div');
+		var sendAllToLMSIcon = document.createElement('button');
+		sendAllToLMSIcon.type = "button";
 		sendAllToLMSIcon.name = "sendAllToLMSIcon";
 		sendAllToLMSIcon.style.cursor = 'pointer';
-		sendAllToLMSIcon.style.display = 'grid';
 		sendAllToLMSIcon.innerHTML = sendAllToLMSIconSVG;
+		sendAllToLMSIcon.setAttribute("class", actionBar.lastChild.getAttribute("class"));
 		sendAllToLMSIcon.title = "Send all tracks to LMS";
 		sendAllToLMSIcon.onclick = function() {
 			sendAllToLMS();
