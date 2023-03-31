@@ -4,8 +4,7 @@ A series of scripts and extensions to enable direct integration between Spotify'
 
 ## Demo
 
-https://user-images.githubusercontent.com/3442410/229184047-e0b7a4ab-7117-4067-90e2-2617888af77c.mp4
-
+https://user-images.githubusercontent.com/3442410/229207921-41fef87e-8d6f-44d8-b5b6-b6d0a1650b86.mp4
 
 ## Installation
 
