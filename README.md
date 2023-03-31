@@ -12,9 +12,9 @@ https://user-images.githubusercontent.com/3442410/229184047-e0b7a4ab-7117-4067-9
 ### TamperMonkey extension
 
 - install the TamperMonkey addon for Google Chrome or Mozilla Firefox from the respective official extension marketplace
-- add a new script and copy/paste the contents of the ![squeezify extension file](https://github.com/orosoiu/squeezify/blob/master/tampermonkey-script/spotify-lms-integration.js)
-- make sure to configure the LMS server hostname/IP and the player ID in the script preamble
-
+- create a new script by clicking the TamperMonkey extension icon and choosing the "Create a new script..." option
+- copy/paste the contents of the ![squeezify extension file](https://github.com/orosoiu/squeezify/blob/master/tampermonkey-script/spotify-lms-integration.js) into the script editor
+- make sure to configure the LMS server hostname/IP and the player ID in the script preamble as shown below. You can find the LMS player ID in the LMS web interface by navigating to the LMS information page, Players section: the player ID is the same as the MAC Address
 ```
 // @connect		192.168.1.100
 
@@ -24,9 +24,7 @@ var lmsHost = "192.168.1.100";
 var lmsPort = 9000;
 // END USER DEFINED VARIABLES
 ```
-
-To find out the player ID, navigate to the LMS information page, Players section; the player ID is the same as the MAC Address
-
+- save the script
 
 ## Roadmap
 
