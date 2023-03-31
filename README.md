@@ -4,7 +4,7 @@ A series of scripts and extensions to enable direct integration between Spotify'
 
 ## Demo
 
-![Demo](https://github.com/orosoiu/squeezify/blob/master/resources/demo.mp4?raw=true)
+![Demo](https://raw.githubusercontent.com/orosoiu/squeezify/main/resources/demo.mp4)
 
 
 ## Installation
