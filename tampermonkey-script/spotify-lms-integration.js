@@ -52,32 +52,30 @@ function toastNotification(message, status) {
 	toastr[status](message);
 }
 
-function sendToLMS(URI, title, notify) {
-  GM.xmlHttpRequest({
-    method: "POST",
-    url: lmsURI,
-    data: JSON.stringify({
-      id: 1,
-      method: "slim.request",
-      params: [playerID,["playlist","add",URI]]
-      }),
-    headers: {
-      "Content-Type": "application/json; charset=UTF-8"
-    },
-    onload: function(response) {
-		if (notify) {
-			toastNotification("<strong>" + title + "</strong> was sent to LMS", "success");
+function sendToLMS(URI) {
+	return new Promise((resolve, reject) => {
+		GM.xmlHttpRequest({
+		method: "POST",
+		url: lmsURI,
+		data: JSON.stringify({
+		  id: 1,
+		  method: "slim.request",
+		  params: [playerID,["playlist","add",URI]]
+		  }),
+		headers: {
+		  "Content-Type": "application/json; charset=UTF-8"
+		},
+		onload: function(response) {
+			resolve("Success");
+		},
+		onerror: function(response) {
+			reject("LMS returned error status, please check server configuration");
 		}
-    },
-	onerror: function(response) {
-		if (notify) {
-			toastNotification("LMS returned error status, please check server configuration", "error");
-		}
-	}
-  });
+		});
+	});
 }
 
-function sendAllToLMS() {
+async function sendAllToLMS() {
 	var trackLinks = document.querySelectorAll("div[role='presentation']>div[role='row']>div[role='presentation']>div[role='gridcell']>div>a[href^='/track']");
 	if (trackLinks) {
 		for (var i = 0, l = trackLinks.length; i < l; i++) {
@@ -85,7 +83,10 @@ function sendAllToLMS() {
 			// sometimes albums/playlist contain some hidden tracks which are not shown in the UI but are present in DOM
 			// apparently these hidden tracks all have clientHeight and clientWidth properties set to 0, so use this to filter them
 			if (trackLink.clientHeight > 0 && trackLink.clientWidth > 0) {
-				sendToLMS(trackLink.href, trackLink.text, false);
+				try {
+					const response = await sendToLMS(trackLink.href);
+				} catch (error) {
+				}
 			}
 		}
 		const albumPlaylistName = document.querySelector("h1").textContent;
@@ -113,9 +114,18 @@ function injectCastToLMSButton() {
 				sendToLMSIcon.innerHTML = sendToLMSIconSVG;
 				sendToLMSIcon.setAttribute("title", "Send track to LMS");
 				sendToLMSIcon.setAttribute("class", lastColumn.lastChild.getAttribute("class"));
-				sendToLMSIcon.onclick = function() {
-					sendToLMS(trackUrl, trackName, true);
-				};
+				$(sendToLMSIcon).click(async function() {
+					$(this).prop("disabled", true);
+					$(this).css('cursor', 'wait');
+					try {
+						const response = await sendToLMS(trackUrl);
+						toastNotification("<strong>" + trackName + "</strong> was sent to LMS", "success");
+					} catch (error) {
+						toastNotification(error, "error");
+					}
+					$(this).prop("disabled",false);
+					$(this).css('cursor', 'pointer');
+				});
 				lastColumn.prepend(sendToLMSIcon);
 			}
 		}
@@ -136,9 +146,15 @@ function injectCastAllToLMSButton() {
 		sendAllToLMSIcon.innerHTML = sendAllToLMSIconSVG;
 		sendAllToLMSIcon.setAttribute("class", actionBar.lastChild.getAttribute("class"));
 		sendAllToLMSIcon.title = "Send all tracks to LMS";
-		sendAllToLMSIcon.onclick = function() {
-			sendAllToLMS();
-		};
+		$(sendAllToLMSIcon).click(async function() {
+			$(this).prop("disabled", true);
+			$(this).css('cursor', 'wait');
+			try {
+				await sendAllToLMS();
+			} catch (error) {}
+			$(this).prop("disabled",false);
+			$(this).css('cursor', 'pointer');
+		});
 		actionBar.insertBefore(sendAllToLMSIcon, actionBar.childNodes[actionBar.childElementCount - 1]);
 	}
 }
