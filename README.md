@@ -1,10 +1,11 @@
-# Squeezify - a Spotify to Logitech Media Server integration
+# Squeezify - a Spotify to Logitech Media Server bridge
 
-A series of scripts and extensions to enable direct integration between Spotify's web interface and Logitech Media Server (Squeezebox). The squeezify extension adds new buttons to the Spotify album and playlist pages to allow sending individual tracks or an entire album/playlist to LMS.
+A series of scripts and extensions to enable direct integration between Spotify's web interface and Logitech Media Server (Squeezebox). The squeezify extensions add new buttons to the Spotify album and playlist pages to allow sending individual tracks or an entire album/playlist to LMS.
 
 ## Demo
 
 https://user-images.githubusercontent.com/3442410/229207921-41fef87e-8d6f-44d8-b5b6-b6d0a1650b86.mp4
+
 
 ## Installation
 

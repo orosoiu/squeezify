@@ -1,6 +1,6 @@
 // ==UserScript==
-// @name		Spotify - Logitech Media Server integration
-// @description	Add buttons to the Spotify web interface to allow sending albums, playlists or individual tracks to Logitech Media Server
+// @name		Spotify - Logitech Media Server bridge
+// @description	Add buttons to the Spotify web interface to allow sending albums, playlists and individual tracks to a Logitech Media Server instance
 // @version		1.0
 // @author		Ovidiu Rosoiu
 // @namespace	http://occam.ro/greasemonkey/spotify-lms-integration
