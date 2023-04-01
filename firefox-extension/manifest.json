@@ -1,7 +1,8 @@
 {
 
-	"manifest_version": 3,
-	"name": "Squeezify - a Spotify to Logitech Media Server bridge",
+	"manifest_version": 2,
+	"name": "Squeezify",
+	"short_name": "Squeezify",
 	"version": "1.0",
 	"author": "Ovidiu Rosoiu",
 	"developer": {
@@ -10,13 +11,18 @@
 	},
 	"homepage_url": "https://github.com/orosoiu/squeezify",
 	
+	"browser_action": {
+		"browser_style": false,
+		"default_popup": "config/options.html"
+	},
+	
 	"browser_specific_settings": {
 		"gecko": {
 			"id": "squeezify@occam.ro"
 		}
 	},
 
-	"description": "Add buttons to the Spotify web interface to allow sending albums, playlists and individual tracks to a Logitech Media Server instance",
+	"description": "A Spotify to Logitech Media Server bridge: adds buttons to the Spotify web interface to allow sending albums, playlists and individual tracks to a Logitech Media Server instance",
 
 	"icons": {
 		"24": "icons/icon.png"

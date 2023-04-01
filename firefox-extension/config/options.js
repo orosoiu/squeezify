@@ -5,6 +5,9 @@ function saveOptions(e) {
 			lmsHost: document.querySelector("#lmsHost").value,
 			lmsPort: document.querySelector("#lmsPort").value
 		}
+	}).then(function() {
+		document.querySelector("#submit").value = "Saved";
+		setTimeout(() => {document.querySelector("#submit").value = "Save"}, 1000);
 	});
 	e.preventDefault();
 }

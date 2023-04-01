@@ -3,19 +3,20 @@
 <html>
   <head>
     <meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="options.css" media="screen" />
   </head>
 
 <body>
+	<h1>Squeezify configuration</h1>
+	<p></p>
    <form>
-      <label>Player ID</label>
-      <input type="text" id="playerID" ><br />
-      <label>LMS hostname or IP</label>
-      <input type="text" id="lmsHost" ><br />
-      <label>LMS port</label>
-      <input type="text" id="lmsPort" ><br />
-      <button type="submit">Save</button>
+      <input type="text" id="playerID" placeholder="Player ID" />
+      <input type="text" id="lmsHost" placeholder="LMS hostname or IP" />
+      <input type="text" id="lmsPort" placeholder="LMS port" />
+      <input type="submit" id="submit" value="Save"/>
   </form>
   <script src="options.js"></script>
+  <p class="disclaimer">If you are having troubles finding the values for fields above please watch <a href="#">this tutorial video</a> on how to configure the Squeezify extension.</p>
 </body>
 
 </html>
