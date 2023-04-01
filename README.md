@@ -37,7 +37,7 @@ If you do not wish to use the TamperMonkey addon, you can install Squeezify as a
 
 That's it! After installation you can configure and use the extension like demonstrated in the video below.
 
-https://user-images.githubusercontent.com/3442410/229307952-a36bcc84-68fa-4881-a372-afe41899ca01.mp4
+https://user-images.githubusercontent.com/3442410/229308065-9f384a1c-531e-46f4-a347-f88ee6b3c121.mp4
 
 ## Roadmap
 
