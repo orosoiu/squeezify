@@ -3,7 +3,7 @@
 	"manifest_version": 2,
 	"name": "Squeezify",
 	"short_name": "Squeezify",
-	"version": "1.0",
+	"version": "1.0.1",
 	"author": "Ovidiu Rosoiu",
 	"developer": {
 		"name": "Ovidiu Rosoiu",
@@ -28,8 +28,8 @@
 		"16": "icons/icon-16.png",
 		"24": "icons/icon-24.png",
 		"32": "icons/icon-32.png",
-		"64": "icons/icon64.png",
-		"128": "icons/icon128.png"
+		"64": "icons/icon-64.png",
+		"128": "icons/icon-128.png"
 	},
 	
 	"options_ui": {
