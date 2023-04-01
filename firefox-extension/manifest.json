@@ -25,7 +25,11 @@
 	"description": "A Spotify to Logitech Media Server bridge: adds buttons to the Spotify web interface to allow sending albums, playlists and individual tracks to a Logitech Media Server instance",
 
 	"icons": {
-		"24": "icons/icon.png"
+		"16": "icons/icon-16.png",
+		"24": "icons/icon-24.png",
+		"32": "icons/icon-32.png",
+		"64": "icons/icon64.png",
+		"128": "icons/icon128.png"
 	},
 	
 	"options_ui": {
@@ -42,13 +46,13 @@
     {
 		"matches": ["*://*.spotify.com/*"],
 		"js": [
-			"js/jquery.min.js", 
+			"js/jquery-3.6.4.js", 
 			"js/waitForKeyElements.js",
-			"js/toastr.min.js",
+			"js/toastr.js",
 			"js/squeezify.js"
 		],
 		"css": [
-			"css/toastr.min.css"
+			"css/toastr.css"
 		],
 		"run_at": "document_idle"
     }
