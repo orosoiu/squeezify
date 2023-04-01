@@ -26,9 +26,22 @@ var lmsPort = 9000;
 ```
 - save the script
 
+### Mozilla Firefox extension
+
+If you do not wish to use the TamperMonkey addon, you can install Squeezify as a standard Firefox extension. Squeezify is currently pending to be published in the official Firefox store, in the meantime you can install the extension manually by following these steps:
+
+- download the "firefox-extension" folder
+- open Firefox and navigate to about:debugging page
+- click on "This Firefox" link and then on "Load Temporary Add-on..." button
+- navigate to the downloaded "firefox-extension" folder and choose the "manifest.json" file
+
+That's it! After installation you can configure and use the extension like demonstrated in the video below.
+
+https://user-images.githubusercontent.com/3442410/229307952-a36bcc84-68fa-4881-a372-afe41899ca01.mp4
+
 ## Roadmap
 
-- Google Chrome and Mozilla Firefox extensions
+- Google Chrome extension
 - LMS player auto-discovery
 
 
