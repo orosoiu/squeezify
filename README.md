@@ -32,6 +32,10 @@ If you do not wish to use the TamperMonkey addon, you can install Squeezify as a
 
 https://user-images.githubusercontent.com/3442410/229485133-d19f9db8-c794-4c40-ade7-92a798119c97.mp4
 
+### Google Chrome extension
+
+Squeezify is currently pending publication in the official Google Chrome extension store.
+
 ## Roadmap
 
 - Google Chrome extension
