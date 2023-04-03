@@ -30,7 +30,7 @@ var lmsPort = 9000;
 
 If you do not wish to use the TamperMonkey addon, you can install Squeezify as a [standard Firefox extension](https://addons.mozilla.org/en-US/firefox/addon/squeezify/). After installing you will need to configure it as shown in the video below:
 
-https://user-images.githubusercontent.com/3442410/229308065-9f384a1c-531e-46f4-a347-f88ee6b3c121.mp4
+https://user-images.githubusercontent.com/3442410/229485133-d19f9db8-c794-4c40-ade7-92a798119c97.mp4
 
 ## Roadmap
 
