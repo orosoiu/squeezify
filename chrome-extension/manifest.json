@@ -13,7 +13,6 @@
 			"24": "icons/icon-24.png",
 			"32": "icons/icon-32.png"
 		},
-		"default_title": "Click Me",
 		"default_popup": "config/options.html"
 	},
 
