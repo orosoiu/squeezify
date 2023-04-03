@@ -73,3 +73,12 @@ a:hover {
 p.disclaimer {
 	text-align: center;
 }
+
+video {
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+	width: 80%;
+	height: auto;
+}
