@@ -32,6 +32,8 @@ Squeezify is available in the [official Firefox add-on store](https://addons.moz
 
 https://user-images.githubusercontent.com/3442410/229485133-d19f9db8-c794-4c40-ade7-92a798119c97.mp4
 
+If you are getting a *NetworkError when attempting to fetch resource* errors plese see *Known issues* section.
+
 ### Google Chrome extension
 
 The are currently no plans to publish Squeezify in the official Google Chrome extension store. If you wish to install the extension manually you can do so by following these easy steps:
@@ -40,9 +42,19 @@ The are currently no plans to publish Squeezify in the official Google Chrome ex
 - in Google Chrome, go to extensions configuration page by clicking the three dots in the upper right corner and choosing *Settings*, then *Extensions* menu entry
 - in the newly opened tab, click *Load unpacked*, navigate to and select the *chrome-extension* folder downloaded in the first step then press *Select Folder*
 - the entension is now installed; you can configure it as shown in the video above
-- optionally, if you are getting *Failed to fetch* errors after configuring, you need to allow insecure calls from the Spotify page to the LMS server <sup>*</sup> by clicking the padlock icon next to the Spotify URL, then *Site Settings* then scroll down to the *Insecure content* option and change it to *Allow*
 
-<sup>*</sup> This is needed because LMS is HTTP only (as per original developers this is by design and not subject to change). Calls from a secure origin (Spotify) to an insecure one (LMS) are considered a security concern and blocked by modern browsers. Since I don't have access to the Spotify servers in order to fix this at the source, the only workaround is to manually enable insecure calls for Spotify in you browser. Read more about Mixed Content [here](https://www.howtogeek.com/443032/what-is-mixed-content-and-why-is-chrome-blocking-it/).
+If you are getting a *Failed to fetch* errors plese see *Known issues* section.
+
+### Known issues
+
+**Error:** Adding a song/playlist to LMS fails with *NetworkError when attempting to fetch resource* (Firefox) or *Failed to fetch* (Chrome) error.
+
+This happens because of something called Mixed Content which is forbidden in modern browsers. Because LMS is HTTP only (as per original design and not subject to change according to developers), calls from a secure origin (Spotify) to an insecure one (LMS) are considered a security concern and blocked by modern browsers. Since I don't have access to the Spotify servers in order to fix this at the source, the only workaround is to manually enable insecure calls for Spotify in you browser. Read more about Mixed Content [here](https://www.howtogeek.com/443032/what-is-mixed-content-and-why-is-chrome-blocking-it/).
+
+To manually allow Mixed Content for Spotify in your web browser, please follow the steps below then refresh the Spotify web page:
+
+- *Google Chrome*: click the padlock icon next to the Spotify URL in the address bar, then *Site Settings* then scroll down to the *Insecure content* option and change it to *Allow*
+- *Mozilla Firefox*: click the shield icon next to the Spotify URL in the address bar, then scroll down to *HTTPS-Only Mode* section, click *Manage Exceptions*  and in the newly opened popup type *open.spotify.com* inside the *open.spotify.com* field then click *Turn Off* and *Save changes*
 
 ## Roadmap
 
