@@ -10,7 +10,8 @@ chrome.storage.sync.get(['squeezifyOptions'], function(result) {
 	if(!playerID || !lmsHost || !lmsPort) {
 		throw new Error("Missing configuration data, please check extension configuration page");
 	}
-	lmsURI = "http://" + lmsHost + ":" + lmsPort + "/jsonrpc.js";
+	const protocol = !lmsPort || (lmsPort == '443') ? 'https://' : 'http://';
+	lmsURI = protocol + lmsHost + ":" + lmsPort + "/jsonrpc.js";
 	waitForKeyElements("a[href^='/track']", injectCastToLMSButton);
 	waitForKeyElements("div[data-testid='action-bar-row']", injectCastAllToLMSButton);
 });
@@ -126,7 +127,7 @@ function injectCastAllToLMSButton() {
 		sendAllToLMSIcon.name = "sendAllToLMSIcon";
 		sendAllToLMSIcon.style.cursor = 'pointer';
 		sendAllToLMSIcon.innerHTML = sendAllToLMSIconSVG;
-		sendAllToLMSIcon.setAttribute("class", actionBar.lastChild.getAttribute("class"));
+		sendAllToLMSIcon.setAttribute("class", actionBar.childNodes[actionBar.childElementCount - 2].getAttribute("class"));
 		sendAllToLMSIcon.title = "Send all tracks to LMS";
 		$(sendAllToLMSIcon).click(async function() {
 			$(this).prop("disabled", true);
@@ -137,6 +138,6 @@ function injectCastAllToLMSButton() {
 			$(this).prop("disabled",false);
 			$(this).css('cursor', 'pointer');
 		});
-		actionBar.insertBefore(sendAllToLMSIcon, actionBar.childNodes[actionBar.childElementCount - 1]);
+		actionBar.insertBefore(sendAllToLMSIcon, actionBar.childNodes[actionBar.childElementCount - 2]);
 	}
 }

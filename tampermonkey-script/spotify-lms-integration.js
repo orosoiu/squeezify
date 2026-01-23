@@ -144,7 +144,7 @@ function injectCastAllToLMSButton() {
 		sendAllToLMSIcon.name = "sendAllToLMSIcon";
 		sendAllToLMSIcon.style.cursor = 'pointer';
 		sendAllToLMSIcon.innerHTML = sendAllToLMSIconSVG;
-		sendAllToLMSIcon.setAttribute("class", actionBar.lastChild.getAttribute("class"));
+		sendAllToLMSIcon.setAttribute("class", actionBar.childNodes[actionBar.childElementCount - 2].getAttribute("class"));
 		sendAllToLMSIcon.title = "Send all tracks to LMS";
 		$(sendAllToLMSIcon).click(async function() {
 			$(this).prop("disabled", true);
@@ -155,7 +155,7 @@ function injectCastAllToLMSButton() {
 			$(this).prop("disabled",false);
 			$(this).css('cursor', 'pointer');
 		});
-		actionBar.insertBefore(sendAllToLMSIcon, actionBar.childNodes[actionBar.childElementCount - 1]);
+		actionBar.insertBefore(sendAllToLMSIcon, actionBar.childNodes[actionBar.childElementCount - 2]);
 	}
 }
 

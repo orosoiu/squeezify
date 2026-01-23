@@ -16,7 +16,7 @@
 		"default_popup": "config/options.html"
 	},
 
-	"description": "A Spotify to Logitech Media Server bridge: adds buttons to the Spotify web interface to allow sending albums, playlists and individual tracks to a Logitech Media Server instance",
+	"description": "A Spotify to Lyrion Media Server bridge: adds buttons to the Spotify web interface to allow sending albums, playlists and individual tracks to a Lyrion Media Server instance",
 
 	"icons": {
 		"16": "icons/icon-16.png",

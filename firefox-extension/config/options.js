@@ -3,7 +3,7 @@ function saveOptions(e) {
 		squeezifyOptions: {
 			playerID: document.querySelector("#playerID").value,
 			lmsHost: document.querySelector("#lmsHost").value,
-			lmsPort: document.querySelector("#lmsPort").value
+			lmsPort: document.querySelector("#lmsPort").value || '443'
 		}
 	}).then(function() {
 		document.querySelector("#submit").value = "Saved";
