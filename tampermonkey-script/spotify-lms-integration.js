@@ -24,12 +24,13 @@ GM_addStyle("#toast-container.toast-bottom-center>div { width: 40vw !important; 
 // USER DEFINED VARIABLES
 var playerID = "LMS-PLAYER-ID";		// id of the player, usually the MAC Address as shown in Information - Players section
 var lmsHost = "LMS-HOSTNAME-OR-IP";	// IP or hostname where LMS resides (e.g. 192.168.1.100); add this to @connect tag above as well (e.g. @connect 192.168.1.100)
-var lmsPort = 9000;					// port for LMS web interface, default 9000
+var lmsPort = 9000;					// port for LMS web interface, default 9000, 443 if you serve LMS over https (reverse proxy)
 // END USER DEFINED VARIABLES
 
 var sendToLMSIconSVG = '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="lmsIcon" width="16" height="16" aria-hidden="true" viewBox="0 0 24 24"><style>.lmsIcon{fill:#C0C0C0;} .lmsIcon:hover{fill:#E7E7E7;}</style><path d="M2 11v2c5 0 9 4 9 9h2c0-6.1-4.9-11-11-11m18-9H10c-1.1 0-2 .9-2 2v6.5c1 .5 1.9 1.2 2.7 1.9c.9-1.4 2.5-2.4 4.3-2.4c2.8 0 5 2.2 5 5s-2.2 5-5 5h-.2c.1.7.2 1.3.2 2h5c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2m-5 6c-1.1 0-2-.9-2-2s.9-2 2-2s2 .9 2 2s-.9 2-2 2m0 10c-.2 0-.5 0-.7-.1c-.5-1.5-1.2-2.8-2.1-4c.4-1.1 1.5-2 2.8-2c1.7 0 3 1.3 3 3S16.7 18 15 18M2 15v2c2.8 0 5 2.2 5 5h2c0-3.9-3.1-7-7-7m0 4v3h3c0-1.7-1.3-3-3-3"></path></svg>';
 var sendAllToLMSIconSVG = '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="lmsIcon" width="32" height="32" viewBox="0 0 24 24"><style>.lmsIcon{fill:#C0C0C0;} .lmsIcon:hover{fill:#E7E7E7;}</style><path d="M2 11v2c5 0 9 4 9 9h2c0-6.1-4.9-11-11-11m18-9H10c-1.1 0-2 .9-2 2v6.5c1 .5 1.9 1.2 2.7 1.9c.9-1.4 2.5-2.4 4.3-2.4c2.8 0 5 2.2 5 5s-2.2 5-5 5h-.2c.1.7.2 1.3.2 2h5c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2m-5 6c-1.1 0-2-.9-2-2s.9-2 2-2s2 .9 2 2s-.9 2-2 2m0 10c-.2 0-.5 0-.7-.1c-.5-1.5-1.2-2.8-2.1-4c.4-1.1 1.5-2 2.8-2c1.7 0 3 1.3 3 3S16.7 18 15 18M2 15v2c2.8 0 5 2.2 5 5h2c0-3.9-3.1-7-7-7m0 4v3h3c0-1.7-1.3-3-3-3"></path></svg>';
-var lmsURI = "http://" + lmsHost + ":" + lmsPort + "/jsonrpc.js";
+const protocol = !lmsPort || (lmsPort == '443') ? 'https://' : 'http://';
+var lmsURI = protocol + lmsHost + ":" + lmsPort + "/jsonrpc.js";
 
 function toastNotification(message, status) {
 	toastr.options = {
